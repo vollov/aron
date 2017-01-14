@@ -123,17 +123,26 @@ USE_L10N = True
 
 USE_TZ = True
 
+RESOURCE_ROOT='/opt/www/aron/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=  os.path.join(RESOURCE_ROOT,'static')
+
+#variables for developement
+STATIC_PATH = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
+
 
 FIXTURE_PATH = os.path.join(BASE_DIR,'fixture')
 FIXTURE_DIRS = (
     FIXTURE_PATH,
 )
-RESOURCE_ROOT='/opt/www/aron/'
+
 
 LOGGING = {
     'version': 1,
