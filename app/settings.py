@@ -131,12 +131,6 @@ RESOURCE_ROOT='/opt/www/aron/'
 STATIC_URL = '/static/'
 STATIC_ROOT=  os.path.join(RESOURCE_ROOT,'static')
 
-#variables for developement
-STATIC_PATH = os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS = (
-    STATIC_PATH,
-)
-
 
 FIXTURE_PATH = os.path.join(BASE_DIR,'fixture')
 FIXTURE_DIRS = (
