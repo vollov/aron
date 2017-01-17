@@ -1,0 +1,15 @@
+Show profile after login
+
+a player has following status
+(1) free -- registered without join any team
+(2) pending -- apply join team and waiting captain's approval
+(3) activate -- approved by captain
+
+after login, server query player object to find status.
+front end will do 
+free -> show join team form [edit profile]
+pending -> show pending [edit profile]
+active -> show events, [edit profile][view team expense][view team announce]
+
+a captain is always an active player
+show active players [active players] [pending players] [manage expense] [manage announce] [upload schedule] [manage schedule]
