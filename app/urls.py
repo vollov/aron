@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from accounts.views import AccountViewSet, LoginView, LogoutView, RegistrationView
+# from accounts.views import AccountViewSet, LoginView, LogoutView, RegistrationView
+
 from content.views import PageViewSet, BlockViewSet
 
 from rest_framework import routers
 router = routers.DefaultRouter()
-router.register(r'account', AccountViewSet)
+# router.register(r'account', AccountViewSet)
+
 router.register(r'page', PageViewSet)
 #router.register(r'block', BlockViewSet)
 
@@ -29,7 +31,7 @@ from app.settings import API_PATH
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^' + API_PATH, include(router.urls)),
-    url(r'^' + API_PATH + 'logout$', LogoutView.as_view(), name='logout'),
-    url(r'^' + API_PATH + 'login$', LoginView.as_view(), name='login'),
-    url(r'^' + API_PATH + 'register$', RegistrationView.as_view(), name='register'),
+#     url(r'^' + API_PATH + 'logout$', LogoutView.as_view(), name='logout'),
+#     url(r'^' + API_PATH + 'login$', LoginView.as_view(), name='login'),
+#     url(r'^' + API_PATH + 'register$', RegistrationView.as_view(), name='register'),
 ]

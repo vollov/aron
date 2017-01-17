@@ -1,3 +1,9 @@
 from django.test import TestCase
 
-# Create your tests here.
+###############################################
+## test serializers
+###############################################
+class TestPlayerSerializers(TestCase):
+    fixtures = ['auth.json', 'team.json']
+    
+    

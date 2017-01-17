@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'accounts',
     'content',
     'team',
 ]
@@ -185,4 +184,3 @@ LOGGING = {
 }
 
 API_PATH='api/v1/'
-AUTH_USER_MODEL = 'accounts.Account'

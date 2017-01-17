@@ -1,0 +1,8 @@
+[1] register form:
+
+player = { user, 'birth_year'}
+user = {'id', 'email', 'username', 'is_active', 'first_name', 'last_name'}
+
+[2] login form 
+
+

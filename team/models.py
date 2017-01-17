@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from accounts.models import Account
+from django.contrib.auth.models import User, Group
 
 class Team(models.Model):
     
@@ -14,32 +14,35 @@ class Team(models.Model):
     
     class Meta:
         db_table = 'team'
+        ordering = ['id']
 
+    def __unicode__(self):
+        return self.name
+    
 class Player(models.Model):
     
-    account = models.OneToOneField(Account, null=True)
+    user = models.OneToOneField(User, null=True)
     active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True, editable = True)
     team = models.ForeignKey(Team, null=True)
     number = models.IntegerField(default=0, blank=False, null=False)
+    birth_year = models.IntegerField(default=1988, blank=False, null=False)
     
+    class Meta:
+        db_table = 'player'
+        
     def __unicode__(self):
-        user = self.account
         if self.number:
             number = str(self.number)
         else:
             number = 'n/a'
-        return user.last_name + ' ' +user.first_name + '(' + number + ') ' + self.team.city
+        return self.user.last_name + ' ' +self.user.first_name + '(' + number + ') ' + self.team.city
     
     def is_captain(self):
-        return self.account.groups.filter(name='captain').exists()
+        return self.user.groups.filter(name='captain').exists()
 
     def is_coach(self):
-        return self.account.groups.filter(name='coach').exists()
-        
-    class Meta:
-        db_table = 'player'
-
+        return self.user.groups.filter(name='coach').exists()
+    
     def full_name(self):
-        user = self.user_profile.user
-        return user.last_name + '.' +user.first_name
+        return self.user.last_name + '.' + self.user.first_name
