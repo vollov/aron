@@ -1,5 +1,5 @@
 python manage.py dumpdata accounts --indent 4 > accounts.json
-python manage.py loaddata accounts.json
+python manage.py loaddata auth.json
 
 
 

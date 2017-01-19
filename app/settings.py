@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    'tastypie',
     'content',
     'team',
 ]
@@ -123,7 +123,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-RESOURCE_ROOT='/opt/www/aron/'
+RESOURCE_ROOT='e:/opt/www/aron/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
